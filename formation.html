@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction à reveal.js – une formation Vertigéo</title>
+
+		<meta name="description" content="Une courte formation pour apprendre la prise en main de RevealJS">
+		<meta name="author" content="Emmanuel Bourassin">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+
+						<!-- Any section element inside of this container is displayed as a slide -->
+						<div class="slides">
+							<section>
+								<h1>Reveal.js</h1>
+								<h3>Séance d'initiation</h3>
+								<p>
+									<small>Animée par Emmanuel Bourassin, inspiré par le <a href="http://revealjs.com/">revealjs.com</a></small>
+								</p>
+							</section>
+
+							<section>
+								<h2>Objectifs :</h2>
+								<p>
+									Le but de cette présentation est d'apprendre à utiliser revealJS, tant dans la conception ou la modification du support que lors d'une présentation.
+								</p>
+							</section>
+
+							<section>
+								<h2>Vous aurez besoin de :</h2>
+								<p class="fragment grow">Un navigateur web</p>
+								<p class="fragment grow">Un éditeur de texte <span class="fragment highlight-red">avec</span> <span class="fragment highlight-blue">coloration</span> <span class="fragment highlight-green">syntaxique</span>  </p>
+								<p class="fragment current-visible">C'est tout :-)</p>
+							</section>
+
+							<!-- Example of nested vertical slides -->
+							<section>
+								<h2>Navigation</h2>
+
+								<section>
+									<p>Touches utiles :</p>
+									<img src="media/keys.svg" alt="Down arrow">
+								</section>
+								<section>
+									<p>Oh, une slide en dessous !</p>
+								</section>
+								<section>
+									<p>Encore une...</p>
+								</section>
+								<section>
+									<p>Là c'est la dernière (la flèche du bas est grisée)</p>
+									<p>Il va falloir remonter ou bien partir sur le côté !</p>
+								</section>
+							</section>
+							<section>
+								<h2> Modifier le thème... </h2>
+								<section>
+										Ouvrez le fichier formation.html avec votre éditeur de texte préféré
+										et cherchez-y la ligne de code suivante :
+										<pre><code class="hljs">&lt;link rel="stylesheet" href="css/theme/black.css" id="theme"&gt;</code></pre>
+								</section>
+								<section>
+										<p>Pour modifier, il suffit de remplacer "simple.css" par le nom d'un autre fichier css.</p>
+										<p>Ils sont tous dans le répertoire css/theme </p>
+										<img src="media/css.png" alt="">
+								</section>
+								<section>
+										<p>Faites plusieurs essais et trouvez celui qui vous plait le plus.</p>
+										<p>Une fois le nom modifié dans le code html, sauvegarder le fichier et actualisez le navigateur pour voir le nouveau thème.</p>
+								</section>
+							</section>
+
+							<section>
+								<h2>Les paramètres</h2>
+								<section>
+									<p>Intéressons-nous à ce qui est aussi paramétrable. Comme précédemment, modifiez les valeurs des paramètres et sauvegardez pour observer l'effet des différents paramètres :</p>
+
+									<pre><code class="hljs"> Reveal.initialize({
+controls: true,  // Display controls in the bottom right corner
+progress: true,  // Display a presentation progress bar
+history: true,   // Push each slide change to the browser history
+center: true,    // Vertical centering of slides
+
+slideNumber: true, // Display the page number of the current slide
+autoSlide: 5000, // Slide every duration milliseconds
+
+theme: 'default', // available themes are in /css/theme
+transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+</code></pre>
+								</section>
+							</section>
+
+				<section>
+					<h2>Premiers exercices : apparitions...</h2>
+					<section id="tp01">
+						<p class="fragment">On va commencer simplement :</p>
+						<p><span class="fragment">le but c'est de modifier le code html</span> <span class="fragment">pour ajouter une image</span> <span class="fragment">mais ne l'afficher qu'après ce texte.</span></p>
+						<!-- Eh oui, c'est ici qu'il faut ajouter une image ! -->
+					</section>
+					<section>
+						<p>Maintenant qu'on a vu comment faire apparaître un objet, on va ajouter des effets, comme :</p>
+						<p class="fragment fade-right">vers la gauche</p>
+						<p class="fragment fade-up">vers la droite</p>
+						<p class="fragment fade-down">vers le bas</p>
+						<p class="fragment fade-left">ou même vers haut !</p>
+						<br>
+						<p class="fragment">Mais c'est mélangé !? Exercice : corriger dans le fichier html les effets d'apparition ci-dessus.</p>
+						</section>
+						<section>
+							<p>Bon, ça fait pas mal d'effets d'animation ! En bonus, trois autres qui permettent de :</p>
+							<p class="fragment grow">faire grossir un élément</p>
+							<p class="fragment shrink">faire rétrécir un élément</p>
+							<p class="fragment fade-out">le faire disparaître...</p>
+						</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Comme c'est avant tout du html, on peut faire des listes</h2>
+						<p>Ajouter un quatrième élément à la liste :</p>
+						<ul>
+							<li>Le premier élément</li>
+							<li>Le deuxième,</li>
+							<li>Le troisième</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Et aussi des listes numérotées</h2>
+						<ol>
+							<li>Bon, je pense qu'on a compris le concept</li>
+							<li>Eh oui, une numéro devant chaque élément</li>
+							<li>Hyper original.</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2>Un tableau, sérieusement ?</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>Une colonne</th>
+									<th>Une autre colonne</th>
+									<th>Encore une colonne</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Et du contenu</td>
+									<td>????</td>
+									<td>:-)</td>
+								</tr>
+								<tr>
+									<td>une case vide -></td>
+									<td></td>
+									<td>...</td>
+								</tr>
+								<tr>
+									<td>--</td>
+									<td>////</td>
+									<td>&</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h2>Deuxièmes exercices</h2>
+					<section>
+						<p>Maintenant, à vous de modifier le style de la présentation : </p>
+						<p>Il faudrait que les titres de type h2 soient moins grands, justifiés à droite et en italique.</p>
+					</section>
+
+					<section>
+						<p>C'est fait ? OK, maintenant changez le fond de la présentation !</p>
+					</section>
+
+					<section>
+						<p>Même exercice qu'avant mais uniquement pour cette diapo !</p>
+					</section>
+
+					<section>
+						<p>Supprimez cette diapo !</p>
+					</section>
+
+				</section>
+
+				<section>
+					<h2>Deuxièmes exercices</h2>
+					<section>
+						<p>Maintenant, à vous de modifier le style de la présentation : </p>
+						<p>Il faudrait que les titres de type h2 soient moins grands, justifiés à droite et en italique.</p>
+					</section>
+
+					<section>
+						<p>C'est fait ? OK, maintenant changez le fond de la présentation !</p>
+					</section>
+
+					<section>
+						<p>Même exercice qu'avant mais uniquement pour cette diapo !</p>
+					</section>
+
+					<section>
+						<p>Maintenant, essayer de faire en sorte que la diapo 7.2 s'affiche correctement !</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Quelques conseils</h2>
+					<section>
+						<p>Maintenant que vous avez les bases techniques pour remplir vos slides, un peu de théorie.</p>
+					</section>
+
+					<section>
+						<p>
+							<ul>
+							<li class="fragment fade-right">des slides sobres</li>
+							<li class="fragment fade-right">peu de texte</li>
+							<li class="fragment fade-right">une section par partie</li>
+							<li class="fragment fade-right">une sous-section par idée</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<img src="media/struct.svg" alt="">
+					</section>
+
+					<section>
+						<p>Maintenant, essayer de faire en sorte que la diapo 7.2 s'affiche correctement !</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Pour aller plus loin...</h2>
+					<p>L'étape suivante c'est de créer sa propre feuille de style.
+					N'hésitez pas à lire le fichier README.md qui se trouve dans le répertoire css/theme pour apprendre à créer un thème.</p>
+				</section>
+
+
+				<section>
+					<h2>Diffusion</h2>
+					<p>Une présentation RevealJS peut être utilisée hors-ligne. Parfois certaines typographies appelées via GoogleFonts ne se chargeront pas et seront substitutées par des polices système.</p>
+					<p>Pour déplacer la présentation sur une clé USB, il suffit de copier l'intégralité du dossier dans lequel se trouve le fichier html. </p>
+					<p>Il est aussi possible de le mettre en ligne comme n'importe quelle page web. Les GitHub Pages fonctionnent très bien cela.</p>
+				</section>
+
+				<section>
+					<h2>Exemples :</h2>
+					<p><a href="https://ebourassin.github.io/tfn/index.html">Une présentation de stage ING2</a></p>
+					<p><a href="https://ebourassin.github.io/northnav/index.html#/">Une présentation de projet startup ING3</a></p>
+					<p> <a href="https://ebourassin.github.io/rimac_revealjs/presentation_classif3d.html#/"> Une présentation projet dev ING2</a></p>
+
+				</section>
+
+				<section>
+					<h2>Conclusion</h2>
+					<p>Ce cours c'est qu'une petite introduction à RevealJS. Pour vous perfectionnez, n'hésitez pas à consulter <a href="https://github.com/hakimel/reveal.js"> le code source, la documentation </a> et aussi la présentation <a href="https://revealjs.com/"> revealjs.com </a> sur laquelle cette formation est basée. </p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+        controls: true,  // Display controls in the bottom right corner
+        progress: true,  // Display a presentation progress bar
+        history: true,   // Push each slide change to the browser history
+        center: true,    // Vertical centering of slides
+
+        slideNumber: true, // Display the page number of the current slide
+        autoSlide: 5000, // Slide every duration milliseconds
+
+        theme: 'blood', // available themes are in /css/theme
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				pdfMaxPagesPerSlide: 1,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
